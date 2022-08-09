@@ -1,0 +1,40 @@
+.deposit {
+    padding: 50px 0px;
+}
+
+.deposit h3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.deposit h4 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.deposit .input-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.deposit .input-wrap input {
+    width: 50%;
+}
+
+.deposit .button-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.deposit-button {
+    width: 50%;
+    background-color: transparent;
+    color: white;
+}
+
+.deposit-button:hover {
+    background-color: white;
+    color: black;
+}
