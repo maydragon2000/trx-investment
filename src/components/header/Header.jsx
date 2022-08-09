@@ -1,5 +1,5 @@
-import React , { useRef , useState , useEffect } from 'react';
-import { Link , useLocation } from "react-router-dom";
+import React, { useRef, useState, useEffect } from 'react';
+import { Link, useLocation } from "react-router-dom";
 import menus from "../../pages/menu";
 import DarkMode from './DarkMode';
 import logoheader from '../../assets/images/logo/logo.png'
@@ -7,13 +7,13 @@ import logoheader2x from '../../assets/images/logo/logo@2x.png'
 import logodark from '../../assets/images/logo/logo_dark.png'
 import logodark2x from '../../assets/images/logo/logo_dark@2x.png'
 import imgsun from '../../assets/images/icon/sun.png'
-import avt from '../../assets/images/avatar/avt-2.jpg'
+// import avt from '../../assets/images/avatar/avt-2.jpg'
 
 
 const Header = () => {
     const { pathname } = useLocation();
 
-    const headerRef = useRef (null)
+    const headerRef = useRef(null)
     useEffect(() => {
         window.addEventListener('scroll', isSticky);
         return () => {
@@ -42,21 +42,21 @@ const Header = () => {
 
     const [activeIndex, setActiveIndex] = useState(null);
     const handleOnClick = index => {
-        setActiveIndex(index); 
+        setActiveIndex(index);
     };
 
     return (
         <header id="header_main" className="header_1 js-header" ref={headerRef}>
             <div className="themesflat-container">
                 <div className="row">
-                    <div className="col-md-12">                              
-                        <div id="site-header-inner"> 
+                    <div className="col-md-12">
+                        <div id="site-header-inner">
                             <div className="wrap-box flex">
                                 <div id="site-logo" className="clearfix">
                                     <div id="site-logo-inner">
                                         <Link to="/" rel="home" className="main-logo">
-                                            <img className='logo-dark'  id="logo_header" src={logodark} srcSet={`${logodark2x}`} alt="nft-gaming" />
-                                            <img className='logo-light'  id="logo_header" src={logoheader} srcSet={`${logoheader2x}`} alt="nft-gaming" />
+                                            <img className='logo-dark' id="logo_header" src={logodark} srcSet={`${logodark2x}`} alt="nft-gaming" />
+                                            <img className='logo-light' id="logo_header" src={logoheader} srcSet={`${logoheader2x}`} alt="nft-gaming" />
                                         </Link>
                                     </div>
                                 </div>
@@ -64,24 +64,24 @@ const Header = () => {
                                 <nav id="main-nav" className="main-nav" ref={menuLeft} >
                                     <ul id="menu-primary-menu" className="menu">
                                         {
-                                            menus.map((data,index) => (
-                                                <li key={index} onClick={()=> handleOnClick(index)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : '' } ${activeIndex === index ? 'active' : ''} ` }   >
+                                            menus.map((data, index) => (
+                                                <li key={index} onClick={() => handleOnClick(index)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === index ? 'active' : ''} `}   >
                                                     <Link to={data.links}>{data.name}</Link>
                                                     {
-                                                         data.namesub &&
-                                                         <ul className="sub-menu" >
+                                                        data.namesub &&
+                                                        <ul className="sub-menu" >
                                                             {
                                                                 data.namesub.map((submenu) => (
                                                                     <li key={submenu.id} className={
                                                                         pathname === submenu.links
-                                                                        ? "menu-item current-item"
-                                                                        : "menu-item"
+                                                                            ? "menu-item current-item"
+                                                                            : "menu-item"
                                                                     }><Link to={submenu.links}>{submenu.sub}</Link></li>
                                                                 ))
                                                             }
                                                         </ul>
                                                     }
-                                                    
+
                                                 </li>
                                             ))
                                         }
@@ -111,11 +111,11 @@ const Header = () => {
                                             <div className="price">
                                                 <span>2.45 <strong>ETH</strong> </span>
                                             </div>
-                                            <img
+                                            {/* <img
                                                 className="avatar"
                                                 src={avt}
                                                 alt="avatar"
-                                                />
+                                                /> */}
                                             <div className="avatar_popup mt-20">
                                                 <div className="d-flex align-items-center copy-text justify-content-between">
                                                     <span> 13b9ebda035r178... </span>
@@ -128,7 +128,7 @@ const Header = () => {
                                                         className="coin"
                                                         src={imgsun}
                                                         alt="/"
-                                                        />
+                                                    />
                                                     <div className="info ml-10">
                                                         <p className="text-sm font-book text-gray-400">Balance</p>
                                                         <p className="w-full text-sm font-bold text-green-500">16.58 ETH</p>
@@ -150,7 +150,7 @@ const Header = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
